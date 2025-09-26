@@ -2,91 +2,95 @@
 
 import { useState, useEffect } from 'react';
 import styles from './forca.module.css';
+import Link from 'next/link';
 
-const pokemon = [
-  "Bulbasaur", "Ivysaur", "Venusaur", "Charmander", "Charmeleon", "Charizard",
-  "Squirtle", "Wartortle", "Blastoise", "Caterpie", "Metapod", "Butterfree",
-  "Weedle", "Kakuna", "Beedrill", "Pidgey", "Pidgeotto", "Pidgeot",
-  "Rattata", "Raticate", "Spearow", "Fearow", "Ekans", "Arbok", "Pikachu",
-  "Raichu", "Sandshrew", "Sandslash", "Nidoran♀", "Nidorina", "Nidoqueen",
-  "Nidoran♂", "Nidorino", "Nidoking", "Clefairy", "Clefable", "Vulpix",
-  "Ninetales", "Jigglypuff", "Wigglytuff", "Zubat", "Golbat", "Oddish",
-  "Gloom", "Vileplume", "Paras", "Parasect", "Venonat", "Venomoth",
-  "Diglett", "Dugtrio", "Meowth", "Persian", "Psyduck", "Golduck",
-  "Mankey", "Primeape", "Growlithe", "Arcanine", "Poliwag", "Poliwhirl",
-  "Poliwrath", "Abra", "Kadabra", "Alakazam", "Machop", "Machoke", "Machamp",
-  "Bellsprout", "Weepinbell", "Victreebel", "Tentacool", "Tentacruel",
-  "Geodude", "Graveler", "Golem", "Ponyta", "Rapidash", "Slowpoke", "Slowbro",
-  "Magnemite", "Magneton", "Farfetch’d", "Doduo", "Dodrio", "Seel", "Dewgong",
-  "Grimer", "Muk", "Shellder", "Cloyster", "Gastly", "Haunter", "Gengar",
-  "Onix", "Drowzee", "Hypno", "Krabby", "Kingler", "Voltorb", "Electrode",
-  "Exeggcute", "Exeggutor", "Cubone", "Marowak", "Hitmonlee", "Hitmonchan",
-  "Lickitung", "Koffing", "Weezing", "Rhyhorn", "Rhydon", "Chansey",
-  "Tangela", "Kangaskhan", "Horsea", "Seadra", "Goldeen", "Seaking",
-  "Staryu", "Starmie", "Mr. Mime", "Scyther", "Jynx", "Electabuzz",
-  "Magmar", "Pinsir", "Tauros", "Magikarp", "Gyarados", "Lapras", "Ditto",
-  "Eevee", "Vaporeon", "Jolteon", "Flareon", "Porygon", "Omanyte", "Omastar",
-  "Kabuto", "Kabutops", "Aerodactyl", "Snorlax", "Articuno", "Zapdos",
-  "Moltres", "Dratini", "Dragonair", "Dragonite", "Mewtwo", "Mew"
+const palavras = [
+  "BULBASAUR", "IVYSAUR", "VENUSAUR", "CHARMANDER", "CHARMELEON", "CHARIZARD",
+  "SQUIRTLE", "WARTORTLE", "BLASTOISE", "CATERPIE", "METAPOD", "BUTTERFREE",
+  "WEEDLE", "KAKUNA", "BEEDRILL", "PIDGEY", "PIDGEOTTO", "PIDGEOT",
+  "RATTATA", "RATICATE", "SPEAROW", "FEAROW", "EKANS", "ARBOK", "PIKACHU",
+  "RAICHU", "SANDSHREW", "SANDSLASH", "NIDORANF", "NIDORINA", "NIDOQUEEN",
+  "NIDORANM", "NIDORINO", "NIDOKING", "CLEFAIRY", "CLEFABLE", "VULPIX",
+  "NINETALES", "JIGGLYPUFF", "WIGGLYTUFF", "ZUBAT", "GOLBAT", "ODDISH",
+  "GLOOM", "VILEPLUME", "PARAS", "PARASECT", "VENONAT", "VENOMOTH",
+  "DIGLETT", "DUGTRIO", "MEOWTH", "PERSIAN", "PSYDUCK", "GOLDUCK",
+  "MANKEY", "PRIMEAPE", "GROWLITHE", "ARCANINE", "POLIWAG", "POLIWHIRL",
+  "POLIWRATH", "ABRA", "KADABRA", "ALAKAZAM", "MACHOP", "MACHOKE", "MACHAMP",
+  "BELLSPROUT", "WEEPINBELL", "VICTREEBEL", "ENTACOOL", "TENTACRUEL",
+  "GEODUDE", "GRAVELER", "GOLEM", "PONYTA", "RAPIDASH", "SLOWPOKE", "SLOWBRO",
+  "MAGNEMITE", "MAGNETON", "FARFETCHD", "DODUO", "DODRIO", "SEEL", "DEWGONG",
+  "GRIMER", "MUK", "SHELLDER", "CLOYSTER", "GASTLY", "HAUNTER", "GENGAR",
+  "ONIX", "DROWZEE", "HYPNO", "KRABBY", "KINGLER", "VOLTORB", "ELECTRODE",
+  "EXEGGUTE", "EXEGGUTOR", "CUBONE", "MAROWAK", "HITMONLEE", "HITMONCHAN",
+  "LICKITUNG", "KOFFING", "WEEZING", "RYHORN", "RHYDON", "CHANSEY",
+  "TANGELA", "KANGASKHAN", "HORSEA", "SEADRA", "GOLDEEN", "SEAKING",
+  "STARYU", "STARMIE", "MRMIME", "SCYTHER", "JYNX", "ELECTABUZZ",
+  "MAGMAR", "PINSIR", "TAUROS", "MAGIKARP", "GYARADOS", "LAPRAS", "DITTO",
+  "EEVEE", "VAPOREON", "JOLTEON", "FLAREON", "PORYGON", "OMANYTE", "OMASTAR",
+  "KABUTO", "KABUTOPS", "AERODACTYL", "SNORLAX", "ARTICUNO", "ZAPDOS",
+  "MOLTRES", "DRATINI", "DRAGONAIR", "DRAGONITE", "MEWTWO", "MEW"
 ];
 
-function getPokemonAleatoria() {
-  const index = Math.floor(Math.random() * pokemon.length);
-  return pokemon[index];
+function getPalavraAleatoria() {
+  const index = Math.floor(Math.random() * palavras.length);
+  return palavras[index];
 }
 
 export default function JogoDaForca() {
-  const [pokemon, setPokemon] = useState('');
+  const [palavra, setPalavra] = useState('');
   const [letrasAdivinhadas, setLetrasAdivinhadas] = useState([]);
   const [letrasErradas, setLetrasErradas] = useState([]);
   const maxErros = 6;
 
   useEffect(() => {
-    if (pokemon.length > 0) {
+    if (palavras.length > 0) {
       iniciarNovoJogo();
     }
   }, []);
 
   function iniciarNovoJogo() {
-    const novoPokemon = getPokemonAleatoria().toUpperCase();
-    setPokemon(novoPokemon);
+    const novaPalavra = getPalavraAleatoria();
+    setPalavra(novaPalavra);
     setLetrasAdivinhadas([]);
     setLetrasErradas([]);
   }
 
   function handleAdivinhar(letra) {
-    if (letrasAdivinhadas.includes(letra) || letrasErradas.includes(letra)) {
+    if (letrasAdivinhadas.includes(letra) || letrasErradas.includes(letra) || jogoTerminado) {
       return;
     }
 
-    if (pokemon.includes(letra)) {
+    if (palavra.includes(letra)) {
       setLetrasAdivinhadas([...letrasAdivinhadas, letra]);
     } else {
       setLetrasErradas([...letrasErradas, letra]);
     }
   }
 
-  const pokemonExibida = pokemon
+  const palavraExibida = palavra
     .split('')
     .map(letra => (letrasAdivinhadas.includes(letra) ? letra : '_'))
     .join(' ');
 
-  const isVitoria = pokemon.split('').every(letra => letrasAdivinhadas.includes(letra));
+  const isVitoria = palavra.split('').every(letra => letrasAdivinhadas.includes(letra));
   const isDerrota = letrasErradas.length >= maxErros;
   const jogoTerminado = isVitoria || isDerrota;
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Jogo da Forca</h1>
+      <h1 className={styles.title}>Forca Pokémon gen 1</h1>
       <div className={styles.jogo}>
+        <div className={styles.infoBox}>
+          <p>Nota: ♀ = "F" e ♂ = "M"</p>
+        </div>
         <ForcaDrawing erros={letrasErradas.length} />
-        <div className={styles.pokemonContainer}>
-          <p className={styles.pokemon}>{pokemonExibida}</p>
+        <div className={styles.palavraContainer}>
+          <p className={styles.palavra}>{palavraExibida}</p>
         </div>
         {jogoTerminado ? (
-          <div>
+          <div className={styles.endGameContainer}>
             {isVitoria && <p className={styles.vitoria}>Parabéns! Você venceu!</p>}
-            {isDerrota && <p className={styles.derrota}>Você perdeu! O pokemon era: {pokemon}</p>}
+            {isDerrota && <p className={styles.derrota}>Você perdeu! A palavra era: {palavra}</p>}
             <button className={styles.reiniciarButton} onClick={iniciarNovoJogo}>
               Reiniciar Jogo
             </button>
@@ -112,26 +116,27 @@ export default function JogoDaForca() {
           </div>
         )}
       </div>
+      <Link href="/" className={styles.backButton}>Voltar para o Portfólio</Link>
     </div>
   );
 }
 
 function ForcaDrawing({ erros }) {
   const parts = [
-    <circle cx="50" cy="30" r="15" stroke="black" strokeWidth="2" fill="none" />,
-    <line x1="50" y1="45" x2="50" y2="85" stroke="black" strokeWidth="2" />,
-    <line x1="50" y1="50" x2="30" y2="70" stroke="black" strokeWidth="2" />,
-    <line x1="50" y1="50" x2="70" y2="70" stroke="black" strokeWidth="2" />,
-    <line x1="50" y1="85" x2="30" y2="105" stroke="black" strokeWidth="2" />,
-    <line x1="50" y1="85" x2="70" y2="105" stroke="black" strokeWidth="2" />,
+    <circle key="cabeca" cx="50" cy="30" r="15" stroke="#4a4a4a" strokeWidth="2" fill="none" />,
+    <line key="tronco" x1="50" y1="45" x2="50" y2="85" stroke="#4a4a4a" strokeWidth="2" />,
+    <line key="bracoE" x1="50" y1="50" x2="30" y2="70" stroke="#4a4a4a" strokeWidth="2" />,
+    <line key="bracoD" x1="50" y1="50" x2="70" y2="70" stroke="#4a4a4a" strokeWidth="2" />,
+    <line key="pernaE" x1="50" y1="85" x2="30" y2="105" stroke="#4a4a4a" strokeWidth="2" />,
+    <line key="pernaD" x1="50" y1="85" x2="70" y2="105" stroke="#4a4a4a" strokeWidth="2" />,
   ];
 
   return (
     <svg height="150" width="100" className={styles.forcaSvg}>
-      <line x1="10" y1="140" x2="90" y2="140" stroke="black" strokeWidth="2" />
-      <line x1="20" y1="140" x2="20" y2="10" stroke="black" strokeWidth="2" />
-      <line x1="20" y1="10" x2="50" y2="10" stroke="black" strokeWidth="2" />
-      <line x1="50" y1="10" x2="50" y2="15" stroke="black" strokeWidth="2" />
+      <line x1="10" y1="140" x2="90" y2="140" stroke="#4a4a4a" strokeWidth="2" />
+      <line x1="20" y1="140" x2="20" y2="10" stroke="#4a4a4a" strokeWidth="2" />
+      <line x1="20" y1="10" x2="50" y2="10" stroke="#4a4a4a" strokeWidth="2" />
+      <line x1="50" y1="10" x2="50" y2="15" stroke="#4a4a4a" strokeWidth="2" />
       {parts.slice(0, erros)}
     </svg>
   );
