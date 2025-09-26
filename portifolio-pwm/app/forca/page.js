@@ -82,7 +82,7 @@ export default function JogoDaForca() {
       <h1 className={styles.title}>Forca Pokémon gen 1</h1>
       <div className={styles.jogo}>
         <div className={styles.infoBox}>
-          <p>Nota: ♀ = "F" e ♂ = "M"</p>
+          <p>Nota: ♀ = F e ♂ = M</p>
         </div>
         <ForcaDrawing erros={letrasErradas.length} />
         <div className={styles.palavraContainer}>
