@@ -18,7 +18,6 @@ export default function Home() {
           <a href="https://www.linkedin.com/in/nunnowakiyama/" target="_blank" rel="noopener noreferrer">
             <Image src="/components/images/linkedin image.jpg" alt="LinkedIn" width={24} height={24} />
           </a>
-          {/* Adicione mais links de redes sociais aqui se desejar, como Behance, etc. */}
         </div>
 
         <hr className={styles.divider}></hr>
@@ -30,6 +29,7 @@ export default function Home() {
         <section className={styles.section}>
           <h3 className={styles.sectionTitle}>Educação</h3>
           <p className={styles.sectionContent}>Universidade Católica de Pernambuco (UNICAP), Ciência da Computação - 2023/2 - 2027/1</p>
+          <p className={styles.sectionContent}>SENAC Idiomas PE, Inglês (Curso de Idiomas) - 2023/1 - 2026/2</p>        
         </section>
 
         <hr className={styles.divider}></hr>
