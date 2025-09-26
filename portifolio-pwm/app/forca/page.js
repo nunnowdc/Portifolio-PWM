@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import styles from './forca.module.css';
 import Link from 'next/link';
+import Image from "next/image";
 
 const palavras = [
   "BULBASAUR", "IVYSAUR", "VENUSAUR", "CHARMANDER", "CHARMELEON", "CHARIZARD",
@@ -91,20 +92,24 @@ export default function JogoDaForca() {
           <div className={styles.endGameContainer}>
             {isVitoria && (
                 <div>
-                    <img
+                    <Image
                     src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
                     alt="Pikachu feliz"
                     className={styles.resultadoSprite}
+                    width={160}
+                    height={160}
                     />
                     <p className={styles.vitoria}>Parabéns! Você venceu!</p>
                 </div>
             )}
             {isDerrota && (
                 <div>
-                    <img
+                    <Image
                     src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/143.png"
                     alt="Snorlax"
                     className={styles.resultadoSprite}
+                    width={160}
+                    height={160}
                     />
                     <p className={styles.derrota}>Você perdeu! A palavra era: {palavra}</p>
                 </div>
@@ -136,16 +141,16 @@ export default function JogoDaForca() {
       </div>
       <Link href="/" className={styles.backButton}>Voltar para o Portfólio</Link>
         <div className={styles.footerSprites}>
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="Bulbasaur" />
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png" alt="Charmander" />
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png" alt="Squirtle" />
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="Pikachu" />
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/39.png" alt="Jigglypuff" />
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/52.png" alt="Meowth" />
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/54.png" alt="Psyduck" />
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/133.png" alt="Eevee" />
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/150.png" alt="Mewtwo" />
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/151.png" alt="Mew" />
+            <Image src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="Bulbasaur" width={64} height={64} />
+            <Image src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png" alt="Charmander" width={64} height={64} />
+            <Image src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png" alt="Squirtle" width={64} height={64} />
+            <Image src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="Pikachu" width={64} height={64} />
+            <Image src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/39.png" alt="Jigglypuff" width={64} height={64} />
+            <Image src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/52.png" alt="Meowth" width={64} height={64} />
+            <Image src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/54.png" alt="Psyduck" width={64} height={64} />
+            <Image src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/133.png" alt="Eevee" width={64} height={64} />
+            <Image src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/150.png" alt="Mewtwo" width={64} height={64} />
+            <Image src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/151.png" alt="Mew" width={64} height={64} />
         </div>
     </div>
   );

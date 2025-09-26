@@ -142,14 +142,14 @@
   justify-content: center;
 }
 
-.footerSprites img {
+.footerSprites Image {
   width: 64px;
   height: 64px;
   image-rendering: pixelated;
   transition: transform 0.2s ease;
 }
 
-.footerSprites img:hover {
+.footerSprites Image:hover {
   transform: scale(1.2);
 }
 
