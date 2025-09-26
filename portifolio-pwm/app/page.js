@@ -1,9 +1,11 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import Navbar from "../components/Navbar";
 
 export default function Home() {
   return (
     <div className={styles.page}>
+      <Navbar />
       <main className={styles.main}>
         <img src="/components/images/foto de perfil.jpg" alt="Foto de perfil" width="200" height="200" className={styles.profileImage}/>
         
@@ -29,7 +31,7 @@ export default function Home() {
       
         <hr className={styles.divider}></hr>
 
-        <section className={styles.section}>
+        <section id="educacao" className={styles.section}>
           <h3 className={styles.sectionTitle}>Educação</h3>
           <ul className={styles.sectionContent}>
             <li>Universidade Católica de Pernambuco (UNICAP), Ciência da Computação - 2023/2 - 2027/1</li>
@@ -39,7 +41,7 @@ export default function Home() {
 
         <hr className={styles.divider}></hr>
 
-        <section className={styles.section}>
+        <section id="tecnologias" className={styles.section}>
           <h3 className={styles.sectionTitle}>Tecnologias</h3>
           <ul className={styles.skillsList}>
             <li className={styles.skillItem}>
@@ -78,7 +80,7 @@ export default function Home() {
         
         <hr className={styles.divider}></hr>
         
-        <section className={styles.section}>
+        <section id="projetos" className={styles.section}>
           <h3 className={styles.sectionTitle}>Projetos</h3>
           <ol className={styles.projectList}>
             <li className={styles.projectItem}>
@@ -90,10 +92,15 @@ export default function Home() {
             <li className={styles.projectItem}>
               <h4 className={styles.projectTitle}>Sistema Integrado de Gerenciamento | 07/2024 - 11/2024 </h4>
               <p className={styles.projectDescription}>Projeto Java com conceito CRUD para gerenciamento de 3 áreas distintas: restaurante, eventos e clínica médica. O sistema utiliza princípios de POO como encapsulamento, abstração e reutilização de código. </p>
+              <p className={styles.projectSkills}><b>Skills: </b>Trabalho em Equipe, Java, POO, & SOLID. </p>
               <p className={styles.projectRepo}><b>Repositório: </b> <a href="https://github.com/nunnowdc/Sistema-Integrado-de-Gerenciamento-Java" target="_blank" rel="noopener noreferrer">Repositório do Projeto 2</a> </p>
             </li>
           </ol>
         </section>
+        
+        <footer className={styles.footer}>
+          <p>&copy; 2025 Nunno Wakiyama Diniz Carvalho. Todos os direitos reservados.</p>
+        </footer>
       </main>
     </div>
   );
