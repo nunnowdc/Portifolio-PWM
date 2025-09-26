@@ -94,7 +94,7 @@ export default function JogoDaForca() {
                 <div>
                     <Image
                     src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
-                    alt="Pikachu feliz"
+                    alt='Pikachu feliz'
                     className={styles.resultadoSprite}
                     width={160}
                     height={160}
@@ -106,7 +106,7 @@ export default function JogoDaForca() {
                 <div>
                     <Image
                     src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/143.png"
-                    alt="Snorlax"
+                    alt='Snorlax'
                     className={styles.resultadoSprite}
                     width={160}
                     height={160}
