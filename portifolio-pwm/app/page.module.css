@@ -77,6 +77,7 @@
 
 .section {
   text-align: left;
+  scroll-margin-top: 100px;
 }
 
 .sectionTitle {
@@ -148,6 +149,24 @@
 
 .projectRepo a:hover {
   color: #5a9cf8;
+}
+
+.callToActionButton {
+  display: inline-block;
+  padding: 12px 24px;
+  margin: 40px 0;
+  background-color: #86f3a3;
+  color: #333333;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.callToActionButton:hover {
+  background-color: #6bc782;
+  transform: translateY(-2px);
 }
 
 .footer {

@@ -98,6 +98,10 @@ export default function Home() {
           </ol>
         </section>
         
+        <a href="/forca" className={styles.callToActionButton}>
+            Jogue o Jogo da Forca
+        </a>
+        
         <footer className={styles.footer}>
           <p>&copy; 2025 Nunno Wakiyama Diniz Carvalho. Todos os direitos reservados.</p>
         </footer>

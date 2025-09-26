@@ -9,6 +9,7 @@ export default function Navbar() {
         <li><Link href="#educacao">Educação</Link></li>
         <li><Link href="#tecnologias">Tecnologias</Link></li>
         <li><Link href="#projetos">Projetos</Link></li>
+        <li><Link href="/forca">Jogo da Forca</Link></li>
       </ul>
     </nav>
   );
