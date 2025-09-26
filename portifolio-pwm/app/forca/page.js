@@ -89,8 +89,26 @@ export default function JogoDaForca() {
         </div>
         {jogoTerminado ? (
           <div className={styles.endGameContainer}>
-            {isVitoria && <p className={styles.vitoria}>Parabéns! Você venceu!</p>}
-            {isDerrota && <p className={styles.derrota}>Você perdeu! A palavra era: {palavra}</p>}
+            {isVitoria && (
+                <div>
+                    <img
+                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+                    alt="Pikachu feliz"
+                    className={styles.resultadoSprite}
+                    />
+                    <p className={styles.vitoria}>Parabéns! Você venceu!</p>
+                </div>
+            )}
+            {isDerrota && (
+                <div>
+                    <img
+                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/143.png"
+                    alt="Snorlax"
+                    className={styles.resultadoSprite}
+                    />
+                    <p className={styles.derrota}>Você perdeu! A palavra era: {palavra}</p>
+                </div>
+            )}
             <button className={styles.reiniciarButton} onClick={iniciarNovoJogo}>
               Reiniciar Jogo
             </button>
@@ -117,6 +135,18 @@ export default function JogoDaForca() {
         )}
       </div>
       <Link href="/" className={styles.backButton}>Voltar para o Portfólio</Link>
+        <div className={styles.footerSprites}>
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="Bulbasaur" />
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png" alt="Charmander" />
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png" alt="Squirtle" />
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="Pikachu" />
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/39.png" alt="Jigglypuff" />
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/52.png" alt="Meowth" />
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/54.png" alt="Psyduck" />
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/133.png" alt="Eevee" />
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/150.png" alt="Mewtwo" />
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/151.png" alt="Mew" />
+        </div>
     </div>
   );
 }

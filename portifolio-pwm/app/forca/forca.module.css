@@ -2,18 +2,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   min-height: 100vh;
   padding: 20px;
-  background-color: #fdf5e6;
+  background: linear-gradient(to bottom, #87ceeb, #ffffff);
   color: #333;
   text-align: center;
+  font-family: 'Arial Rounded MT Bold', sans-serif;
 }
 
 .title {
   font-size: 2.5em;
-  color: #4a4a4a;
-  margin-bottom: 20px;
+  color: #ffcb05;
+  -webkit-text-stroke: 2px #2a75bb; 
+  margin: 20px 0;
 }
 
 .jogo {
@@ -21,51 +23,20 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  background: rgba(255, 255, 255, 0.7);
-  padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.85);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   max-width: 600px;
   width: 100%;
 }
 
-.infoBox {
-  width: 100%;
-  padding: 10px;
-  background-color: #f0f0e0;
-  border: 1px solid #d0d0d0;
-  border-radius: 6px;
-  font-size: 0.9em;
-  color: #555;
-  margin-bottom: 20px;
-}
-
-.forcaSvg {
-  width: 100px;
-  height: 150px;
-  margin-bottom: 20px;
-}
-
 .palavraContainer {
-  font-size: 2.5em;
+  font-size: 2em;
   font-weight: bold;
-  letter-spacing: 5px;
-  margin-bottom: 20px;
-  color: #4a4a4a;
-}
-
-.inputContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-}
-
-.letrasErradas {
-  font-size: 1.1em;
-  color: #e74c3c;
-  min-height: 20px;
-  font-weight: bold;
+  letter-spacing: 8px;
+  margin: 20px 0;
+  color: #2a75bb;
 }
 
 .teclado {
@@ -78,13 +49,13 @@
 .tecladoLetra,
 .tecladoLetraCorreta,
 .tecladoLetraErrada {
-  padding: 10px;
-  font-size: 1em;
-  border: 1px solid #d0d0d0;
-  border-radius: 5px;
+  padding: 12px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
   font-weight: bold;
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .tecladoLetra {
@@ -93,11 +64,12 @@
 }
 
 .tecladoLetra:hover:not(:disabled) {
-  background-color: #e0e0e0;
+  background-color: #dcdcdc;
+  transform: translateY(-2px);
 }
 
 .tecladoLetraCorreta {
-  background-color: #92b49b;
+  background-color: #4caf50;
   color: #fff;
 }
 
@@ -106,64 +78,98 @@
   color: #fff;
 }
 
-.tecladoLetra:disabled,
-.tecladoLetraCorreta:disabled,
-.tecladoLetraErrada:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
 .vitoria {
   font-size: 1.5em;
   color: #27ae60;
   font-weight: bold;
-  margin-top: 20px;
 }
 
 .derrota {
   font-size: 1.5em;
   color: #e74c3c;
   font-weight: bold;
-  margin-top: 20px;
-}
-
-.endGameContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
 }
 
 .reiniciarButton {
   padding: 12px 24px;
-  background-color: #f0f0f0;
-  color: #333;
-  border-radius: 5px;
-  text-decoration: none;
+  background-color: #2a75bb;
+  color: #fff;
+  border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
-  border: 1px solid #d0d0d0;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  border: none;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
 }
 
 .reiniciarButton:hover {
-  background-color: #e0e0e0;
-  transform: translateY(-2px);
+  background-color: #1d4f91;
 }
 
 .backButton {
   display: inline-block;
-  margin-top: 40px;
-  padding: 12px 24px;
-  background-color: #b3a4a1;
-  color: #fff;
-  border-radius: 5px;
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #ffcb05;
+  color: #2a75bb;
+  border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .backButton:hover {
-  background-color: #9a8c88;
   transform: translateY(-2px);
+}
+
+.infoBox {
+  width: 100%;
+  padding: 10px;
+  background-color: #f0f0e0;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  font-size: 1em;
+  font-family: 'Press Start 2P', monospace; 
+  color: #2a75bb;
+  margin-bottom: 20px;
+}
+
+.footerSprites {
+  display: flex;
+  gap: 15px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footerSprites img {
+  width: 64px;
+  height: 64px;
+  image-rendering: pixelated;
+  transition: transform 0.2s ease;
+}
+
+.footerSprites img:hover {
+  transform: scale(1.2);
+}
+
+.inputContainer {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.8em; 
+  color: #2a75bb;
+}
+
+.letrasErradas {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.8em;
+  color: #e74c3c;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.resultadoSprite {
+  width: 160px;   
+  height: 160px;
+  image-rendering: pixelated;
+  margin-bottom: 15px;
 }
