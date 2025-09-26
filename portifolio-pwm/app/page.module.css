@@ -54,6 +54,7 @@
 
 .socialMedia img {
   filter: grayscale(80%);
+  border-radius: 10px;
   transition: filter 0.3s ease, transform 0.3s ease;
 }
 

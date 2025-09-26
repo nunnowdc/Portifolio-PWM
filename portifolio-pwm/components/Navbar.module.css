@@ -33,7 +33,21 @@
 }
 
 .navLinks li a:hover {
-  color: #0070f3;
+  color: #27292b;
+}
+
+.navButton {
+  padding: 8px 16px;
+  background-color: #f0f0f0;
+  border-radius: 6px; 
+  color: #555;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.navButton:hover {
+  background-color: #e0e0e0;
+  color: #333;
+  transform: translateY(-2px);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -52,5 +66,15 @@
 
   .navLinks li a:hover {
     color: #5a9cf8;
+  }
+
+  .navButton {
+    background-color: #444;
+    color: #ddd;
+  }
+
+  .navButton:hover {
+    background-color: #555;
+    color: #fff;
   }
 }
