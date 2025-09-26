@@ -13,10 +13,13 @@ export default function Home() {
 
         <div className={styles.socialMedia}>
           <a href="https://github.com/nunnowdc" target="_blank" rel="noopener noreferrer">
-            <Image src="/components/images/github image.jpg" alt="GitHub" width={24} height={24} />
+            <Image src="/components/images/github image.png" alt="GitHub" width={36} height={36} />
           </a>
           <a href="https://www.linkedin.com/in/nunnowakiyama/" target="_blank" rel="noopener noreferrer">
-            <Image src="/components/images/linkedin image.jpg" alt="LinkedIn" width={24} height={24} />
+            <Image src="/components/images/linkedin image.png" alt="LinkedIn" width={36} height={36} />
+          </a>
+          <a href="https://www.instagram.com/nunno_wdc/" target="_blank" rel="noopener noreferrer">
+            <Image src="/components/images/instagram logo.jpg" alt="Instagram" width={36} height={36} />
           </a>
         </div>
 
@@ -28,8 +31,10 @@ export default function Home() {
 
         <section className={styles.section}>
           <h3 className={styles.sectionTitle}>Educação</h3>
-          <p className={styles.sectionContent}>Universidade Católica de Pernambuco (UNICAP), Ciência da Computação - 2023/2 - 2027/1</p>
-          <p className={styles.sectionContent}>SENAC Idiomas PE, Inglês (Curso de Idiomas) - 2023/1 - 2026/2</p>        
+          <ul className={styles.sectionContent}>
+            <li>Universidade Católica de Pernambuco (UNICAP), Ciência da Computação - 2023/2 - 2027/1</li>
+            <li>SENAC Idiomas PE, Inglês (Curso de Idiomas) - 2023/1 - 2026/2</li>
+          </ul>
         </section>
 
         <hr className={styles.divider}></hr>
@@ -37,10 +42,37 @@ export default function Home() {
         <section className={styles.section}>
           <h3 className={styles.sectionTitle}>Tecnologias</h3>
           <ul className={styles.skillsList}>
-            <li className={styles.skillItem}>?</li>
-            <li className={styles.skillItem}>?</li>
-            <li className={styles.skillItem}>?</li>
-            {/* Adicione mais tecnologias aqui */}
+            <li className={styles.skillItem}>
+              <div className={styles.skillIcons}>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JS" width={42} height={42}/>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" width={42} height={42}/>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3" width={42} height={42}/>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" width={42} height={42}/>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" width={42} height={42}/>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jquery/jquery-original.svg" alt="Jquerry" width={42} height={42}/>
+              </div>
+            </li>
+            <li className={styles.skillItem}>
+              <div className={styles.skillIcons}>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" width={42} height={42}/>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" width={42} height={42}/>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" alt="C" width={42} height={42}/>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++" width={42} height={42}/>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL" width={42} height={42}/>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" alt="SQLite3" width={42} height={42}/>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" alt="SQL" width={42} height={42}/>
+              </div>
+            </li>
+            <li className={styles.skillItem}>
+              <div className={styles.skillIcons}>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/keras/keras-original.svg" alt="Keras" width={42} height={42}/>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" width={42} height={42}/>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg" alt="Django" width={42} height={42}/>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/raspberrypi/raspberrypi-original.svg" alt="RaspBerry" width={42} height={42}/>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/arduino/arduino-original.svg" alt="Arduino" width={42} height={42}/>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubcodespaces/githubcodespaces-original.svg" alt="GithubCodespace" width={42} height={42}/>
+              </div>
+            </li>
           </ul>
         </section>
         

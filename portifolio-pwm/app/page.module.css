@@ -189,6 +189,11 @@
   }
 }
 
+.skillIcons {
+  display: flex;
+  gap: 24px; 
+}
+
 .projectRepo a {
   color: #0070f3;
   text-decoration: underline;
